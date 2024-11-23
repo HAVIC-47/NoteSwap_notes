@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NoteSwap</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'hudai css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <script src="{% static 'hudai js/script.js' %}"></script>
+
+
+</head>
+<body>
+<header class="header">
+    <section class="flex">
+        <a href="#Home" class="logo">NoteSwap</a>
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="{% url 'notes' %}">Notes</a>
+            <a href="{% url 'Price' %}">Premium</a>
+            <a href="{% url 'Profile' %}">Profile</a>
+            <a href="{% url 'Profile' %}">Login</a>
+            <a href="{% url 'Profile' %}">SingUp</a>
+            <a href="{% url 'upload' %}">UPLOAD</a>
+        </nav>
+        <div id="menu-btn" class="fas fa-bars"></div>
+    </section>
+</header>
+
+{% block content%}
+
+{% endblock %}
+<footer class="footer">
+    <section>
+        <div class="share">
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-twitter"></a>
+            <a href="#" class="fab fa-linkedin"></a>
+        </div>
+        <div class="credit">
+            <!--&copy; Copyright by <span>Mazharul Islam Sourav</span> -->
+            NoteSwap &copy; 2024 | All Rights Reserved.
+        </div>
+    </section>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="{% static 'hudai js/script.js' %}"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'hudai css/upload.css' %}">
+
+<div class="drag-area">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+        <header>Drag & Drop to Upload File</header>
+        <span>OR</span>
+        <button type="button" onclick="document.getElementById('fileInput').click()">Browse File</button>
+        <input id="fileInput" type="file" name="pdf_file" hidden>
+        <br>
+        <button type="submit">Upload</button>
+    </form>
+</div>
+
+<script src="{% static 'hudai js/upload.js' %}"></script>
+{% endblock %}

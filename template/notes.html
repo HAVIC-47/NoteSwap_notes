@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'notes/style.css' %}">
+ <section class="notes-section">
+        <div class="note-card">
+            <h3>Math Notes</h3>
+            <p>High-quality notes covering Algebra, Calculus, and Trigonometry.</p>
+            <button>View Notes</button>
+        </div>
+        <div class="note-card">
+            <h3>Physics Notes</h3>
+            <p>Comprehensive notes on Mechanics, Thermodynamics, and Optics.</p>
+            <button>View Notes</button>
+        </div>
+        <div class="note-card">
+            <h3>Chemistry Notes</h3>
+            <p>Detailed notes on Organic, Inorganic, and Physical Chemistry.</p>
+            <button>View Notes</button>
+        </div>
+    </section>
+{% endblock %}

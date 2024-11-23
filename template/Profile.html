@@ -1,10 +1,134 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'hudai css/profile.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'hudai css/responsive.css' %}">
+<!-- ===== ===== Body Main-Background ===== ===== -->
+    <span class="main_bg"></span>
+
+
+    <!-- ===== ===== Main-Container ===== ===== -->
+    <div class="container">
+
+
+        <!-- ===== ===== User Main-Profile ===== ===== -->
+        <section class="userProfile card">
+            <div class="profile">
+                <img src="{% static 'user-profile-icon-free-vector.jpg' %}">
+            </div>
+        </section>
+
+
+        <!-- ===== ===== Work & Skills Section ===== ===== -->
+        <section class="work_skills card">
+
+            <!-- ===== ===== Work Contaienr ===== ===== -->
+            <div class="work">
+                <h1 class="heading">work</h1>
+                <div class="primary">
+                    <h1>Student</h1>
+                    <span>Primary</span>
+                </div>
+                <br>
+
+                <div class="secondary">
+                    <h1>Web & Game Developer</h1>
+                    <span>Secondary</span>
+                </div>
+            </div>
+
+            <!-- ===== ===== Skills Contaienr ===== ===== -->
+            <div class="skills">
+                <h1 class="heading">Skills</h1>
+                <ul>
+                    <li style="--i:0">Android</li>
+                    <li style="--i:1">Web-Design</li>
+                    <li style="--i:2">UI/UX</li>
+                    <li style="--i:3">Video Editing</li>
+                </ul>
+            </div>
+        </section>
+
+
+        <!-- ===== ===== User Details Sections ===== ===== -->
+        <section class="userDetails card">
+            <div class="userName">
+                <h1 class="name">Mazharul Islam Sourav</h1>
+                <p>Admin</p>
+            </div>
+
+            <div class="rank">
+                <h1 class="heading">Note Provided</h1>
+                <span>250</span>
+            </div>
+
+            <div class="btns">
+                <ul>
+
+                    <li class="sendMsg active">
+                        <i class="ri-check-fill ri"></i>
+                        <a href="#">Contacts</a>
+                    </li>
+
+                    <li class="sendMsg">
+                        <a href="#">Approve</a>
+                    </li>
+
+                    <li class="sendMsg">
+                        <a href="#">Requests</a>
+                    </li>
+
+                    <li class="sendMsg">
+                        <a href="#">Upload Notes</a>
+                    </li>
+
+                    <li class="sendMsg">
+                        <a href="#">Change Password/Mail</a>
+                    </li>
+
+
+                </ul>
+            </div>
+        </section>
+
+
+        <!-- ===== ===== Timeline & About Sections ===== ===== -->
+        <section class="timeline_about card">
+            <div class="tabs">
+                <ul>
+                    <li class="about active">
+                        <i class="ri-user-3-fill ri"></i>
+                        <span>About</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="contact_Info">
+                <h1 class="heading">Contact Information</h1>
+                <br>
+                <ul>
+
+                    <li class="address"></li>
+                        <h1 class="label">University :</h1>
+                        <span class="info">University Of Asia Pacific</span>
+                    </li>
+
+                    <li class="address">
+                        <h1 class="label">Department :</h1>
+                        <span class="info">CSE</span>
+                    </li>
+
+                    <li class="email">
+                        <h1 class="label">E-mail :</h1>
+                        <span class="info">contact@noteswap.com</span>
+                    </li>
+
+                    <li class="site">
+                        <h1 class="label">Site :</h1>
+                        <span class="info">www.mazharsourav.com</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+{% endblock %}
