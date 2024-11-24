@@ -23,11 +23,13 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),  # Admin site
-    path('', noteswap.index, name='index'),  # Home page
+    path('', noteswap.index, name='home'),  # Home page
     path('Price/', noteswap.Price, name='Price'),  # Price page
     path('notes/', noteswap.notes, name='notes'),  # Notes page
     path('Profile/', noteswap.Profile, name='Profile'),  # Profile page
-    path('upload/', noteswap.upload, name='upload'),  # File upload form
+    path('upload/', noteswap.upload, name='upload'),
+    path('login/', noteswap.login_user, name='login'),
+    path('logout/', noteswap.logout_user, name='logout'),
     path('upload_pdf/', noteswap.upload_pdf, name='upload_pdf'),  # PDF Upload page
     path('', include('NoteSwap_main.urls'))  # Include app-specific URLs for auth
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
