@@ -5,7 +5,9 @@
     <div class="wrapper">
       <div class="container" id="container">
         <div class="sign-up">
-          <form>
+
+          <form method="POST" action="{% url 'login' %}">
+                {% csrf_token %}
             <h1>Create Account</h1>
             <div class="icons">
               <a href="#" class="icon"><i class="fa-brands fa-facebook"></i></a>
@@ -20,11 +22,11 @@
             <input type="password" placeholder="Password" />
             <button>Sign Up</button>
           </form>
-        <form method="POST" action="{% url 'login' %}"></form>
-        {% csrf_token %}
-        </div>
+
+      </div>
         <div class="sign-in">
-          <form>
+          <form method="POST" action="{% url 'login' %}">
+            {% csrf_token %}
             <h1>Sign In</h1>
             <div class="icons">
               <a href="#" class="icon"><i class="fa-brands fa-facebook"></i></a>
@@ -33,7 +35,7 @@
               <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
             </div>
             <span>or use email password</span>
-             <label for="username">Username:</label>
+            <label for="username">Username:</label>
             <input type="text" name="username" id="username" required>
             <label for="password">Password:</label>
             <input type="password" name="password" id="password" required>

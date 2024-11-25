@@ -4,7 +4,6 @@ from django.contrib.auth.models import User
 from django.contrib.auth import logout as auth_logout
 from django.contrib.auth import authenticate , login ,logout
 from django.contrib import messages
-
 # Create your views here.
 def index(request):
     return render(request,template_name='index.html')
@@ -35,19 +34,19 @@ def upload_pdf(request):
 
 def login_user(request):
     if request.method == 'POST':
-        username = request.POST.get['username']
-        password = request.POST.get['password']
+        username = request.POST['username']
+        password = request.POST['password']
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
             messages.success(request, 'You are now logged in')
-            return redirect('home')
+            return redirect('index')
         else:
-            messages.success(request, 'Please the correct username and password')
-            return redirect('login')
+             messages.success(request, 'there was an error')
+        return redirect('login')
     else:
-        return render(request, template_name='login.html')
 
+        return render(request, 'login.html')
 
 def logout_user(request):
     logout(request)
