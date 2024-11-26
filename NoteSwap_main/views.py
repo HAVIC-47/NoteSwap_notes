@@ -1,10 +1,13 @@
 from django.shortcuts import render, redirect
 from .forms import PDFUploadForm
-from django.contrib.auth.models import User
-from django.contrib.auth import logout as auth_logout
 from django.contrib.auth import authenticate , login ,logout
 from django.contrib import messages
-# Create your views here.
+from django import forms
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import logout as auth_logout
+from .forms import SignUpForm
+
 def index(request):
     return render(request,template_name='index.html')
 
@@ -36,9 +39,9 @@ def login_user(request):
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
-            login(request, user)
+        User = authenticate(request, username=username, password=password)
+        if User is not None:
+            login(request, User)
             messages.success(request, 'You are now logged in')
             return redirect('index')
         else:
@@ -53,3 +56,21 @@ def logout_user(request):
     messages.success(request, 'You have been logged out')
     return redirect('login')
 
+def register_user(request):
+    if request.method == 'POST':
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password1')
+            user = authenticate(request, username=username, password=password)
+            if user is not None:
+                login(request, user)
+                messages.success(request, 'Registration successful!')
+                return redirect('index')
+        else:
+            messages.error(request, 'Please correct the errors below.')
+    else:
+        form = SignUpForm()
+
+    return render(request, 'register.html', {'form': form})
