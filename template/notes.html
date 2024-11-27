@@ -1,22 +1,44 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'notes/style.css' %}">
- <section class="notes-section">
-        <div class="note-card">
-            <h3>Math Notes</h3>
-            <p>High-quality notes covering Algebra, Calculus, and Trigonometry.</p>
-            <button>View Notes</button>
+<link rel="stylesheet" type="text/css" href="{% static 'price css/style.css' %}">
+<div class="wrapper">
+        <div class="single-price">
+            <h1>automata</h1>
+            <div class="price">
+                <h2>12 notes</h2>
+            </div>
+            <div class="deals">
+                <h4>DFA</h4>
+                <h4></h4>
+                <h4>NFA</h4>
+                <h4>regular expression</h4>
+            </div>
+            <a href="Landing_page.html">Select</a>
         </div>
-        <div class="note-card">
-            <h3>Physics Notes</h3>
-            <p>Comprehensive notes on Mechanics, Thermodynamics, and Optics.</p>
-            <button>View Notes</button>
+        <div class="single-price">
+            <h1>System desing and analysis</h1>
+            <div class="price">
+                <h2> 25 Notes</h2>
+            </div>
+            <div class="deals">
+                <h4>activity diagram</h4>
+                <h4>DFD</h4>
+                <h4>aglile methogology </h4>
+            </div>
+            <a href="payment.html">Select</a>
         </div>
-        <div class="note-card">
-            <h3>Chemistry Notes</h3>
-            <p>Detailed notes on Organic, Inorganic, and Physical Chemistry.</p>
-            <button>View Notes</button>
+        <div class="single-price">
+            <h1>DataCom</h1>
+            <div class="price">
+                <h2>69 Notes</h2>
+            </div>
+            <div class="deals">
+                <h4>line coding/h4>
+                <h4>block cloding</h4>
+                <h4>levels of networking</h4>
+            </div>
+            <a href="payment.html">Select</a>
         </div>
-    </section>
+    </div>
 {% endblock %}
