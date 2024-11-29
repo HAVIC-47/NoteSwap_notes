@@ -222,6 +222,7 @@ section{
     color: var(--light-white);
 }
 
+
 .notes .slide{
     background-color: var(--light-bg);
     border-radius: .5rem;
@@ -311,6 +312,9 @@ section{
     background-color: var(--green);
     color: var(--white);
 }
+
+
+
 
 .reviews-slider .slide{
     border-radius: .5rem;
