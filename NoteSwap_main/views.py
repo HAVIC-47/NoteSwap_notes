@@ -7,6 +7,10 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import logout as auth_logout
 from .forms import SignUpForm
+from django.shortcuts import render, redirect
+from django.contrib.auth import login, authenticate
+from django.contrib import messages
+from .forms import SignUpForm
 
 def index(request):
     return render(request,template_name='index.html')
@@ -60,17 +64,12 @@ def register_user(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST)
         if form.is_valid():
-            form.save()
-            username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password1')
-            user = authenticate(request, username=username, password=password)
-            if user is not None:
-                login(request, user)
-                messages.success(request, 'Registration successful!')
-                return redirect('index')
+            user = form.save()
+            login(request, user)
+            messages.success(request, 'Registration successful!')
+            return redirect('index')
         else:
             messages.error(request, 'Please correct the errors below.')
     else:
         form = SignUpForm()
-
     return render(request, 'register.html', {'form': form})
