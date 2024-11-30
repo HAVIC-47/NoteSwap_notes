@@ -54,16 +54,16 @@ def login_user(request):
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
-        User = authenticate(request, username=username, password=password)
-        if User is not None:
-            login(request, User)
-            messages.success(request, 'You are now logged in')
-            return redirect('index')
-        else:
-             messages.success(request, 'there was an error')
-        return redirect('login')
-    else:
+        user = authenticate(request, username=username, password=password)  # Rename 'User' to 'user'
 
+        if user is not None:
+            login(request, user)  # Log the user in if authentication is successful
+            messages.success(request, 'You are now logged in')
+            return redirect('index')  # Redirect to the home page
+        else:
+            messages.error(request, 'There was an error with your login credentials')
+            return redirect('login')  # Redirect back to the login page if there's an error
+    else:
         return render(request, 'login.html')
 
 def logout_user(request):
@@ -71,21 +71,26 @@ def logout_user(request):
     messages.success(request, 'You have been logged out')
     return redirect('login')
 
+
 def register_user(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST)
         if form.is_valid():
-            form.save()
+            user = form.save()  # Save the user to the database
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password1')
             user = authenticate(request, username=username, password=password)
+
             if user is not None:
-                login(request, user)
+                login(request, user)  # Log the user in after successful registration
                 messages.success(request, 'Registration successful!')
-                return redirect('index')
+                return redirect('index')  # Redirect to the home page after successful login
+            else:
+                messages.error(request, 'Authentication failed after registration.')
         else:
             messages.error(request, 'Please correct the errors below.')
     else:
         form = SignUpForm()
 
     return render(request, 'register.html', {'form': form})
+

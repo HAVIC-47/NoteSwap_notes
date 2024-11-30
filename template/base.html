@@ -21,17 +21,18 @@
             <a href="{% url 'package' %}">Premium</a>
             <a href="{% url 'user_profile' %}">Profile</a>
             {% if user.is_authenticated %}
-            <a href="{% url 'login' %}">Logout</a>
+                {% if user.user_role == 'note_provider' %}
+                    <a href="{% url 'upload' %}">UPLOAD</a>
+                {% endif %}
+                <a href="{% url 'login' %}">Logout</a>
             {% else %}
-            <a href="{% url 'login' %}">Login</a>
-            <a href="{% url 'register' %}">SingUp</a>
+                <a href="{% url 'login' %}">Login</a>
+                <a href="{% url 'register' %}">SignUp</a>
             {% endif %}
-
-            <a href="{% url 'upload' %}">UPLOAD</a>
         </nav>
-        <div id="menu-btn" class="fas fa-bars"></div>
     </section>
 </header>
+
 
 
 {% if messages %}

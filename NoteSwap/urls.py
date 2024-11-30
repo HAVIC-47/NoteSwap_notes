@@ -35,7 +35,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),  # Admin site
-    path('', views.index, name='home'),  # Home page
+    path('', views.index, name='index'),  # Home page
     path('Price/', views.Price, name='Price'),  # Price page
     path('notes/', views.notes, name='notes'),  # Notes page
     path('Profile/', views.Profile, name='Profile'),  # Profile page

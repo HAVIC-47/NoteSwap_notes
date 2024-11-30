@@ -10,7 +10,7 @@ class PDFUploadForm(forms.ModelForm):
 
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.models import User
+from .models import CustomUser
 
 class SignUpForm(UserCreationForm):
     first_name = forms.CharField(max_length=30, required=True, widget=forms.TextInput(attrs={
@@ -37,19 +37,25 @@ class SignUpForm(UserCreationForm):
         'class': 'form-control',
         'placeholder': 'Confirm your password'
     }))
+    user_role = forms.ChoiceField(choices=CustomUser.USER_ROLES, widget=forms.Select(attrs={
+        'class': 'form-control',
+    }), required=True)
 
     class Meta:
-        model = User
-        fields = ('first_name', 'last_name', 'username', 'email', 'password1', 'password2')
+        model = CustomUser
+        fields = ('first_name', 'last_name', 'username', 'email', 'password1', 'password2', 'user_role')
 
     def save(self, commit=True):
         user = super(SignUpForm, self).save(commit=False)
         user.email = self.cleaned_data['email']
         user.first_name = self.cleaned_data['first_name']
         user.last_name = self.cleaned_data['last_name']
+        user.user_role = self.cleaned_data['user_role']  # Save the role
         if commit:
             user.save()
         return user
+
+
 
 
 

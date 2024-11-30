@@ -9,19 +9,20 @@ from django.db import models
 
 from django.contrib.auth.models import User
 from django.db import models
+from django.contrib.auth.models import AbstractUser
 
 
-class User(models.Model):
-    userID = models.IntegerField()
-    name = models.CharField(max_length=100, null=True)
-    email = models.CharField(max_length=100, null=True)
-    uploaded_notes = models.IntegerField(null=True)
-    occupation = models.CharField(max_length=100, null=True)
-    university = models.CharField(max_length=100, null=True)
-    user_role = models.CharField(max_length=100, null=True)
-
-    def __str__(self):
-        return self.userID
+# class User(models.Model):
+#     userID = models.IntegerField()
+#     name = models.CharField(max_length=100, null=True)
+#     email = models.CharField(max_length=100, null=True)
+#     uploaded_notes = models.IntegerField(null=True)
+#     occupation = models.CharField(max_length=100, null=True)
+#     university = models.CharField(max_length=100, null=True)
+#     user_role = models.CharField(max_length=100, null=True)
+#
+#     def __str__(self):
+#         return self.userID
 
 class Note(models.Model):
     notesID =models.IntegerField(null=True)
@@ -42,3 +43,24 @@ class PDFUpload(models.Model):
     def __str__(self):
         return self.title
 
+class CustomUser(AbstractUser):
+    USER_ROLES = [
+        ('note_provider', 'Note Provider'),
+        ('regular_user', 'Regular User'),
+    ]
+    user_role = models.CharField(max_length=20, choices=USER_ROLES, default='regular_user')
+
+    groups = models.ManyToManyField(
+        'auth.Group',
+        related_name='customuser_set',  # Set a unique related_name
+        blank=True
+    )
+
+    user_permissions = models.ManyToManyField(
+        'auth.Permission',
+        related_name='customuser_permissions_set',  # Set a unique related_name
+        blank=True
+    )
+
+    def __str__(self):
+        return f"{self.username} ({self.user_role})"

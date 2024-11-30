@@ -38,13 +38,18 @@ urlpatterns = [
     path('Profile/', views.Profile, name='Profile'),
     path('upload/', views.upload, name='upload'),
     path('login/', views.login_user, name='login'),
+    path('register/', views.register_user, name='register'),
     path('logout/', views.logout_user, name='logout'),
     path('upload_pdf/', views.upload_pdf, name='upload_pdf'),
+<<<<<<< Updated upstream
     path('register/', views.register_user, name='register'),
     path('user_profile/', views.user_profile, name='user_profile'),
     path('providers/', views.providers, name='providers'),
     path('contact_us/', views.contact_us, name='contact_us'),
     path('package/', views.package, name='package'),
     path('coming_soon/', views.coming_soon, name='coming_soon'),
+=======
+
+>>>>>>> Stashed changes
 ]
 
