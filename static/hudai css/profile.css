@@ -1,18 +1,126 @@
-/* ===== =====  Poppins Google Font  ===== =====  */
-@import url("https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
-/* ===== =====>>  Universal Selector  <<===== =====  */
-* {
-  padding: 0;
-  margin: 0;
-  font-family: "Poppins", sans-serif;
-  list-style: none;
-  text-decoration: none;
-  box-sizing: border-box;
+:root{
+    --green:#00E77F;
+    --white:#fff;
+    --light-white:#aaa;
+    --black:#3d3d3d;
+    --light-bg:#4b4b4b;
 }
 
-html {
-  font-size: 10px;
+*{
+    font-family: "Rubik", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    transition: .2s linear;
+    text-transform: capitalize;
+}
+
+*::selection{
+    background-color: var(--white);
+    color: var(--black);
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 8rem;
+}
+
+::-webkit-scrollbar{
+    height: .5rem;
+    width: 1rem;
+}
+
+::-webkit-scrollbar-track{
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: var(--green);
+    border-radius: 5rem;
+}
+
+body{
+    background-color: var(--black);
+}
+
+section{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.btn{
+    display: inline-block;
+    margin-top: 1rem;
+    border-radius: 5rem;
+    background-color: var(--light-bg);
+    cursor: pointer;
+    color: var(--white);
+    font-size: 1.8rem;
+    padding: 1rem 3rem;
+}
+
+.btn:hover{
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.heading{
+    margin-bottom: 2.5rem;
+    text-align: center;
+    font-size: 4rem;
+    color: var(--white);
+    text-transform: uppercase;
+}
+
+.heading span{
+    color: var(--green);
+    text-transform: uppercase;
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: var(--light-bg);
+}
+
+.header .flex{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .flex .logo{
+    font-size: 2.5rem;
+    color: var(--white);
+}
+
+.header .flex .navbar a{
+    margin-left: 2rem;
+    color: var(--light-white);
+    font-size: 2rem;
+}
+
+.header .flex .navbar a:hover{
+    color: var(--green);
+}
+
+#menu-btn{
+    cursor: pointer;
+    color: var(--white);
+    font-size: 2.5rem;
+    display: none;
 }
 
 /* ===== =====>> Css Variables  <<===== =====  */
@@ -64,7 +172,7 @@ html {
   --light-bg: #4b4b4b;
 }
 
-/* ===== =====>>  Body Css  <<===== =====  */
+ /*===== =====>>  Body Css  <<===== =====  */
 body {
   display: flex;
   justify-content: center;
@@ -73,44 +181,44 @@ body {
   background: var(--bg1-color);
 }
 
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  padding: 2rem;
-  background-color: var(--light-bg);
-}
+/*.header {*/
+/*  position: fixed;*/
+/*  top: 0;*/
+/*  left: 0;*/
+/*  right: 0;*/
+/*  z-index: 1000;*/
+/*  padding: 2rem;*/
+/*  background-color: var(--light-bg);*/
+/*}*/
 
-.header .flex {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+/*.header .flex {*/
+/*  display: flex;*/
+/*  align-items: center;*/
+/*  justify-content: space-between;*/
+/*}*/
 
-.header .flex .logo {
-  margin-left: 16.3rem;
-  font-size: 2.5rem;
-  color: var(--white);
-}
+/*.header .flex .logo {*/
+/*  margin-left: 16.3rem;*/
+/*  font-size: 2.5rem;*/
+/*  color: var(--white);*/
+/*}*/
 
-.header .flex .navbar {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  margin-left: 50rem;
-}
+/*.header .flex .navbar {*/
+/*  display: flex;*/
+/*  align-items: center;*/
+/*  gap: 2rem;*/
+/*  margin-left: 50rem;*/
+/*}*/
 
-.header .flex .navbar a {
-  color: var(--light-white);
-  font-size: 2rem;
-  text-decoration: none;
-}
+/*.header .flex .navbar a {*/
+/*  color: var(--light-white);*/
+/*  font-size: 2rem;*/
+/*  text-decoration: none;*/
+/*}*/
 
-.header .flex .navbar a:hover {
-  color: var(--green);
-}
+/*.header .flex .navbar a:hover {*/
+/*  color: var(--green);*/
+/*}*/
 
 /* ===== =====>>  Body Main-Background Css  <<===== =====  */
 .main_bg {

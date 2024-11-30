@@ -23,6 +23,21 @@ def Profile(request):
 def upload(request):
     return render(request,template_name='upload.html')
 
+def user_profile(request):
+    return render(request,template_name='user_profile.html')
+
+def providers(request):
+    return render(request,template_name='providers.html')
+
+def contact_us(request):
+    return render(request,template_name='contact_us.html')
+
+def package(request):
+    return render(request,template_name='package.html')
+
+def coming_soon(request):
+    return render(request,template_name='coming_soon.html')
+
 
 def upload_pdf(request):
     if request.method == 'POST':

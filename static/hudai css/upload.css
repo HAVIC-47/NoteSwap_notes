@@ -1,76 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Rubik", sans-serif;
-  list-style: none;
-  text-decoration: none;
-
-
-  --green: #00E77F;
-  --white: #fff;
-  --light-white: #aaa;
-  --black: #3d3d3d;
-  --light-bg: #4b4b4b;
+::-webkit-scrollbar-thumb{
+    background-color: var(--green);
+    border-radius: 5rem;
 }
-body{
+
+body {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background: #00A36C;
-}
-
-
-
-
-
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  padding: 1.3rem;
-  background-color: var(--light-bg);
-}
-
-.header .flex {
-position: relative;
-  display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: space-between;
-}
-
-.header .flex .logo {
-  margin-left: 10rem;
-  font-size: 1.5rem;
-  color: var(--white);
-}
-
-.header .flex .navbar {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  margin-left: 30rem;
-}
-
-.header .flex .navbar a {
-margin-left: 1.5rem;
-  color: var(--light-white);
-  font-size: 1.2rem;
-  text-decoration: none;
-  border-bottom: none;
-}
-
-.header .flex .navbar a:hover {
-  color: var(--green);
+  min-height: 100vh;
+  background: #50C878;
 }
 
 
+footer {
+  margin-top: auto;
+}
 
-.drag-area{
+.drag-area {
+  margin-top: 50px;
+  margin: 20px;
   border: 2px dashed #fff;
   height: 500px;
   width: 700px;
@@ -79,6 +27,7 @@ margin-left: 1.5rem;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  align-self: center;  /* Center horizontally */
 }
 .drag-area.active{
   border: 2px solid #fff;
@@ -105,7 +54,7 @@ margin-left: 1.5rem;
   border: none;
   outline: none;
   background: #fff;
-  color: #5256ad;
+  color: #50C878;
   border-radius: 5px;
   cursor: pointer;
 }

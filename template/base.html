@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>NoteSwap</title>
     {% load static %}
+    <link rel="icon" href="{% static 'photos/NoteSwap transparent logo  05.png' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'hudai css/style.css' %}">
 <!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
@@ -17,8 +18,8 @@
             <a href="{% url 'index' %}">Home</a>
             <a href="{% url 'index' %}">About</a>
             <a href="{% url 'notes' %}">Notes</a>
-            <a href="{% url 'Price' %}">Premium</a>
-            <a href="{% url 'Profile' %}">Profile</a>
+            <a href="{% url 'package' %}">Premium</a>
+            <a href="{% url 'user_profile' %}">Profile</a>
             {% if user.is_authenticated %}
             <a href="{% url 'login' %}">Logout</a>
             {% else %}

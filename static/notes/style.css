@@ -1,122 +1,71 @@
-/* General reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+/*.background-container {*/
+/*    position: relative;*/
+/*    width: 100%;*/
+/*    height: 300px;*/
+/*}*/
 
-/* Body styling */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #00A36C;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
+/*.background-container img {*/
+/*    width: 100%;*/
+/*    height: auto;*/
+/*    object-fit: cover;*/
+/*}*/
 
-/* Navbar styling */
-.navbar {
-    background-color: #3a3a3a;
-    padding: 1em;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.navbar .logo {
-    font-size: 1.5em;
-    font-weight: bold;
-    color: white;
-}
-
-.navbar ul {
-    list-style: none;
-    display: flex;
-}
-
-.navbar ul li {
-    margin-left: 20px;
-}
-
-.navbar ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-.navbar ul li a:hover {
-    color: #FF4D61;
-}
-
-/* Notes section */
-.notes-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    padding: 2em;
-}
-
-.note-card {
-    background-color: #1e1e1e;
-    width: 300px;
-    padding: 2em;
-    border-radius: 8px;
+/* Shop Section */
+.shop-section {
     text-align: center;
+    padding: 50px 20px;
+    background-color: #fff;
+    margin-top: 30px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 60%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 10;
+    position: relative;
 }
 
-.note-card h3 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-}
-
-.note-card p {
-    font-size: 1em;
+.shop-section h1 {
+    font-size: 48px;
     margin-bottom: 20px;
+    color: black;
 }
 
-.note-card button {
-    padding: 10px 20px;
-    background-color: #FF4D61;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s;
+
+/* Shop Grid */
+.shop-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(1, 1fr));
+    gap: 20px;
 }
 
-.note-card button:hover {
-    background-color: #e54354;
-}
-
-/* Footer styling */
-footer {
-    background-color: #3a3a3a;
-    color: white;
+.shop-grid .item {
+    background-color: #f9f9f9;
+    padding: 20px;
     text-align: center;
-    padding: 1em 0;
-    margin-top: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.social-icons {
-    margin-bottom: 10px;
+.shop-grid .item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
 }
 
-.social-icons a {
-    color: white;
-    margin: 0 10px;
-    font-size: 1.2em;
-    text-decoration: none;
-    transition: color 0.3s;
+.shop-grid .item p {
+    font-size: 16px;
+    color: #555;
+    margin: 10px 0;
 }
 
-.social-icons a:hover {
-    color: #FF4D61;
-}
-
-footer p {
-    font-size: 0.9em;
+.shop-grid .item span {
+    font-weight: 600;
+    color: #000;
 }

@@ -6,21 +6,21 @@
     --light-bg: #4b4b4b;
 }
 
-/** {*/
-/*    text-decoration: none;*/
-/*    margin: 0; !* Reset margin and padding for all elements *!*/
-/*    padding: 0;*/
-/*}*/
+* {
+    text-decoration: none;
+    margin: 0; /* Reset margin and padding for all elements */
+    padding: 0;
+}
 
-/*body {*/
-/*    font-family: "Rubik", sans-serif;*/
-/*    background: #00A36C;*/
-/*}*/
+body {
+    font-family: "Rubik", sans-serif;
+    background: #00A36C;
+}
 
 /* Pricing Section Styles */
 .wrapper {
     width: 900px;
-    margin: 5% auto;
+    margin: 100px auto;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;

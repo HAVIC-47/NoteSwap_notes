@@ -5,8 +5,8 @@
         <div class="row">
             <div class="content">
                 <h3>Welcome <span>Admin</span></h3>
-                <a href="{% url 'Price' %}"class="btn">Premium</a>
-                <a href="index.html" class="btn">Requests</a>
+                <a href="{% url 'package' %}"class="btn">Premium</a>
+                <a href="{% url 'coming_soon' %}" class="btn">Requests</a>
             </div>
             <div class="image">
                 <img src="{% static 'photos/Exams-bro.svg' %}" alt="Logo">
@@ -62,7 +62,7 @@
             <div class="content">
                 <h3>Why Read Our Notes?</h3>
                 <p>Our notes are crafted by experienced professionals, ensuring top-notch quality and reliability. Easily accessible and covering a wide range of topics, they cater to all your study needs. Join thousands of satisfied students who trust our comprehensive and user-friendly notes. Elevate your learning experience with NoteSwap today!</p>
-                <a href="contact.html" class="btn">Contact Us</a>
+                <a href="{% url 'contact_us' %}" class="btn">Contact Us</a>
             </div>
         </div>
     </section>
@@ -209,7 +209,7 @@
             <div class="content">
                 <h3>Meet Our <span>Note Provider</span></h3>
                 <p>Our notes are crafted by experienced professionals, ensuring top-notch quality and reliability. Easily accessible and covering a wide range of topics, they cater to all your study needs. Join thousands of satisfied students who trust our comprehensive and user-friendly notes. Elevate your learning experience with NoteSwap today!</p>
-                <a href="contact.html" class="btn">Meet Us</a>
+                <a href="{% url 'providers' %}" class="btn">Meet Us</a>
             </div>
             <div class="image">
                 <img src="{% static 'photos/Nerd-amico.svg' %}" alt="Logo">
