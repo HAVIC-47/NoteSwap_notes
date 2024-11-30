@@ -41,5 +41,8 @@ urlpatterns = [
     path('logout/', views.logout_user, name='logout'),
     path('upload_pdf/', views.upload_pdf, name='upload_pdf'),
     path('register/', views.register_user, name='register'),
+    path('see_notes/', views.see_notes, name='see_notes'),
+    path('contact/', views.help, name='contact'),
+
 ]
 

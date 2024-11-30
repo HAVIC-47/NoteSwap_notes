@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'hudai css/see_notes.css' %}">
+    <main>
+        <section class="upload-section">
+            <h2>Upload Your Notes</h2>
+            <form action="#" method="POST" enctype="multipart/form-data">
+                <input type="file" name="note-image" accept="image/*" required>
+                <textarea name="description" placeholder="Add a description (optional)"></textarea>
+                <button type="submit">Upload</button>
+            </form>
+        </section>
+
+        <section class="notes-section">
+            <h2>Available Notes</h2>
+            <div class="notes-grid">
+                <!-- Example note cards -->
+                <div class="note-card">
+                    <img src="note-example.jpg" alt="Note">
+                    <p>Note description here...</p>
+                </div>
+                <!-- More cards can be added dynamically -->
+            </div>
+        </section>
+    </main>
+{% endblock %}

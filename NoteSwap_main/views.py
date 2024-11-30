@@ -26,7 +26,11 @@ def Profile(request):
 
 def upload(request):
     return render(request,template_name='upload.html')
+def see_notes(request):
+    return render(request,template_name='see_notes.html')
 
+def help(request):
+    return render(request,template_name='contact.html')
 
 def upload_pdf(request):
     if request.method == 'POST':
@@ -55,11 +59,6 @@ def login_user(request):
 
         return render(request, 'login.html')
 
-def logout_user(request):
-    logout(request)
-    messages.success(request, 'You have been logged out')
-    return redirect('login')
-
 def register_user(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST)
@@ -73,3 +72,8 @@ def register_user(request):
     else:
         form = SignUpForm()
     return render(request, 'register.html', {'form': form})
+
+def logout_user(request):
+    logout(request)
+    messages.success(request, 'You have been logged out')
+    return redirect('login')
